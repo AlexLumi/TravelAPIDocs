@@ -7,12 +7,12 @@
     <title>Flight Quotes</title>
 </head>
 <body>
-    <h2>flightQuotes(self, From, To)</h2>
+    <h2>roundTripFlightQuotes(self, From, To)</h2>
     <p>Programming Language: <b>Python 3</b> (As of Jan 2022)</p>
     
     <h3>Description</h3>
     <hr>
-    <p>Travel() must be intialized first before calling flightQuotes(). However, as of currently, the location that gets initialized in the Travel() function will not be used for the flightQuotes() parameters. This function connects to Kayak.com in their flights sections of the website. The parameters are concatenated with the URL variable that is in the function. Example of URL variable: <em>"https://www.kayak.com/flights/"+ From + "-" + To + "</em>. This currently only gets the one best flight for the desire From and To locations.</p>
+    <p>Travel() must be intialized first before calling roundTripFlightQuotes(). However, as of currently, the location that gets initialized in the Travel() function will not be used for the roundTripFlightQuotes() parameters. This function connects to Kayak.com in their round trip flights sections of the website. The parameters are concatenated with the URL variable that is in the function. Example of URL variable: <em>"https://www.kayak.com/flights/"+ From + "-" + To + "</em>. This currently only gets the one best round trip flight for the desire From and To locations.</p>
     
     <h3>Parameters</h3>
     <hr>
@@ -24,7 +24,7 @@
     <hr>
     <pre>
         <code>
-            <cite>atlanta.flightQuotes(<dfn style = "color:green">'CLT'</dfn>,<dfn style = "color:green">'ATL'</dfn>)</cite>
+            <cite>atlanta.roundTripFlightQuotes(<dfn style = "color:green">'CLT'</dfn>,<dfn style = "color:green">'ATL'</dfn>)</cite>
         </code>
         
     </pre>
@@ -33,7 +33,7 @@
     <hr>
     <pre>
         <code>
-            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> flightQuotes</dfn>(self, From, To):</cite>
+            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> roundTripFlightQuotes</dfn>(self, From, To):</cite>
             <cite>&nbsp URL = "https://www.kayak.com/flights/"+ From + "-" + To + "/2022-02-22/2D?sort=bestflight_a"</cite>
             <cite>&nbsp headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0'}</cite>
             <cite>&nbsp page = requests.get(URL, headers=headers)</cite>
