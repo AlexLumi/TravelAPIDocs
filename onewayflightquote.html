@@ -41,7 +41,7 @@
             <cite>&nbsp results_price = soup.find('span', class_='price option-text')</cite>
             <cite>&nbsp results_description = soup.find("ol",class_="flights")</cite>
             <cite>&nbsp time_pair = results_description.find_all('span',class_ = 'time-pair')</cite>
-            <cite>&nbsp print("Plane Trip for", From,'to',To)</cite>
+            <cite>&nbsp print("One-Way Plane Trip for", From,'to',To)</cite>
             <cite>&nbsp print ("Price:",results_price.text.strip())</cite>
             <cite>&nbsp times = []</cite>
             <cite>&nbsp for time in time_pair:</cite>
