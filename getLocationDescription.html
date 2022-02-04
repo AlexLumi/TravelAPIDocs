@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Description</title>
+</head>
+<body>
+    <h2>getLocationDescription()</h2>
+    <p>Programming Language: <b>Python 3</b> (As of Jan 2022)</p>
+    
+    <h3>Description</h3>
+    <hr>
+    <p>Travel() must be intialized first before calling getLocationDescription() . This function is using the location entered in Travel() and connecting to the wikipedia website by concatenating the location string at the end of the URL = "https://en.wikipedia.org/wiki/" + self.location . Using Beatiful Soup, this function is able to parse the HTML code and it is coded to grab and output the first paragraph about the desired location that was entered as a string. </p>
+    
+    <h3>Parameters</h3>
+    <hr>
+    <p style = "background-color: lightgray;"><em>self (None; however read description)</em></p>
+    <p>&nbsp Value of this must be a string and it is grabbed from the intialized Travel() call.</p>
+    <p>&nbsp <em>self.location</em> string needs to be city or country</p>
+    
+    <h3>Calling Example</h3>
+    <hr>
+    <pre>
+        <code>
+            <cite>atlanta.getLocationDesrciption()</cite>
+        </code>
+        
+    </pre>
+    
+    <h3>Class Code</h3>
+    <hr>
+    <pre>
+        <code>
+            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> getLocationDescription</dfn>(self):</cite>
+            <cite>&nbsp URL = <dfn style = "color:green">https://en.wikipedia.org/wiki/"</dfn>+self.location</cite>
+            <cite>&nbsp page = requests.get(URL)</cite>
+            <cite>&nbsp soup = BeautifulSoup(page.content,<dfn style = "color:green">"html.parser"</dfn>)</cite>
+            <cite>&nbsp results = soup.find_all(<dfn style = "color:green">"p"</dfn>)</cite>
+            <cite>&nbsp paragraphs = []</cite>
+            <cite>&nbsp <dfn style = "color:orange">for</dfn> paragraph <dfn style = "color:orange">in</dfn> results: </cite>
+            <cite>&nbsp &nbsp paragraphs.append(paragraph.get_text())</cite>
+            <cite>&nbsp <dfn style = "color:blue">print</dfn> (paragraphs[2])</cite>
+        </code>
+    </pre>
+
+
+    
+</body>
+</html>

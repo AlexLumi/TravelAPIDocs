@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport By Airport Name</title>
+</head>
+<body>
+    <h2>searchAirportInfoByAirportName()</h2>
+    <p>Programming Language: <b>Python 3</b> (As of Jan 2022)</p>
+    
+    <h3>Description</h3>
+    <hr>
+    <p>Travel() must be intialized first before calling searchAirportInfoByAirportName(). Using Pandas, it will read the database that has 9300 airports and search it by the desired airport name you used to intialize Travel().</p>
+    
+    <h3>Parameters</h3>
+    <hr>
+    <p style = "background-color: lightgray;"><em>self (None; however read description)</em></p>
+    <p>&nbsp Value of this must be a string of a correctly spelled location.</p>
+    <p>&nbsp <em>location</em> string needs to be a Airport Name</p>
+    
+    <h3>Calling Example</h3>
+    <hr>
+    <pre>
+        <code>
+            <cite>jiamusi.searchAirportInfoByAirportName()</cite>
+        </code>
+        
+    </pre>
+    
+    <h3>Class Code</h3>
+    <hr>
+    <pre>
+        <code>
+            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> searchAirportInfoByAirportName</dfn>(self):</cite>
+            <cite>&nbsp data = pd.read_excel(<dfn style = "color:green">Global Airport Database.xlsx"</dfn>, <dfn style = "color: red">sheet_name</dfn>= <dfn style = "color:green">"GlobalAirportDatabase"</dfn>)</cite>
+            <cite>&nbsp df = pd.DataFrame(data)</cite>
+            <cite>&nbsp <dfn style = "color: blue">print</dfn> (df.loc[df[<dfn style = "color:green">"Airport Name"</dfn>].str.contains(<dfn style = "color:purple">self</dfn>.location.upper())])</cite>
+            <cite>&nbsp <dfn style = "color:blue">print</dfn>("<dfn style = "color:orange">\n</dfn>")</cite>
+        </code>
+    </pre>
+
+    <h3>Required Database of 9300 Airports</h3>
+    <hr>
+    <a href = "https://www.partow.net/downloads/GlobalAirportDatabase.zip">Download Database</a>
+
+
+    
+</body>
+</html>
