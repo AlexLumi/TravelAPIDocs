@@ -7,12 +7,12 @@
     <title>Current Weather</title>
 </head>
 <body>
-    <h2>currentWeather(self)</h2>
+    <h2>currentWeather()</h2>
     <p>Programming Language: <b>Python 3</b> (As of Jan 2022)</p>
     
     <h3>Description</h3>
     <hr>
-    <p>Travel() must be initialized first before calling currentWeather(). This function connects to Google.com to grab the F and C temperature values. The location is concatenated with the URL variable that is in the function. Example of URL variable: <em>"https://www.google.com/search?q=weather+" + self.location +"+March+20+-+March+21"</em>. This currently only gets the weather for one day.</p>
+    <p>Travel() must be initialized first before calling currentWeather(). This function connects to Google.com to grab the F and C temperature values. The location is concatenated with the URL variable that is in the function. Example of URL variable: <em>"https://www.google.com/search?q=weather+" + self.location +"+March+20+-+March+21"</em>. This currently only gets the weather for one day. In the future, this can be for a specifc day.</p>
     
     <h3>Parameters</h3>
     <hr>
@@ -24,7 +24,7 @@
     <hr>
     <pre>
         <code>
-            <cite>atlanta.trainBusQuotes(<dfn style = "color:green">'ATL'</dfn>,<dfn style = "color:green">'CAE'</dfn>)</cite>
+            <cite>atlanta.currentWeather()</cite>
         </code>
         
     </pre>
@@ -33,20 +33,18 @@
     <hr>
     <pre>
         <code>
-            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> oneWayFlightQuote</dfn>(self, From, To):</cite>
-            <cite>&nbsp URL = "https://www.kayak.com/trains/" + From + "-" + To + "/2022-03-20/2022-03-22?sort=duration_a"</cite>
+            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> currentWeather</dfn>():</cite>
+            <cite>&nbsp URL = ""https://www.google.com/search?q=weather+" + self.location +"+March+20+-+March+21"</cite>
             <cite>&nbsp headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0'}</cite>
             <cite>&nbsp page = requests.get(URL, headers=headers)</cite>
             <cite>&nbsp soup = BeautifulSoup(page.content, "html.parser")</cite>
-            <cite>&nbsp origin_station = soup.find('span', class_='top-row-station origin')</cite>
-            <cite>&nbsp destination_station = soup.find('span', class_='top-row-station destination')</cite>
-            <cite>&nbsp train_depart_times = soup.find('div', class_ = 'col-field time depart')</cite>
-            <cite>&nbsp train_return_times = soup.find('div', class_ = 'col-field time return')</cite>
-            <cite>&nbsp train_price = soup.find('span',class_ = 'price option-text')</cite>
-            <cite>&nbsp print("Train/Bus Trip for", From, 'to', To)</cite>
-            <cite>&nbsp print('Price:', train_price.text.replace('\n',''))</cite>
-            <cite>&nbsp print('Train Departure Time -',origin_station.text,'-',train_depart_times.text.replace('\n',''))</cite>
-            <cite>&nbsp print('Train Arrival Time -',destination_station.text,'-',train_return_times.text.replace('\n',''))</cite>
+            <cite>&nbsp location_site_string = soup.find('div', class_='vk_bk TylWce')</cite>
+            <cite>&nbsp f_weather = soup.find('span',id = 'wob_tm')</cite>
+            <cite>&nbsp c_weather = soup.find('span', id = 'wob_ttm')</cite>
+            <cite>&nbsp location_name = soup.find('div', id = 'wob_loc')</cite>
+            <cite>&nbsp print( location_name.text)</cite>
+            <cite>&nbsp print ("Fahrenheit:",f_weather.text)</cite>
+            <cite>&nbsp print ('Celsius:',c_weather.text)</cite>
             <cite>&nbsp print('\n')</cite>
         </code>
     </pre>
