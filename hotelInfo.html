@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Search (Hidden Function)</title>
+</head>
+<body>
+    <h2>hotelInfo()</h2>
+    <p>Programming Language: <b>Python 3</b> (As of Jan 2022)</p>
+    
+    <h3>Description</h3>
+    <hr>
+    <p>This function uses the location from the initial Travel() call. It connects to a Google search and gets all the hotel names then it concatenates the string at the end of the URL = "https://www.google.com/search?q=hotel" + self.location . Using Beautiful Soup, this function is able to parse the HTML code and it is coded to grab hotel names. </p>
+    
+    <h3>Parameters</h3>
+    <hr>
+    <p style = "background-color: lightgray;"><em>self (None; however read description)</em></p>
+    <p>&nbsp Value of this must be a string</p>
+    <p>&nbsp <em>self.location</em> string needs to be a city or IATA Code.</p>
+    
+    <h3>Calling Example</h3>
+    <hr>
+    <pre>
+        <code>
+            <cite>atlanta.hotelInfo()</cite>
+        </code>
+        
+    </pre>
+    
+    <h3>Class Code</h3>
+    <hr>
+    <pre>
+        <code>
+            <cite><dfn style = "color:orange">def</dfn><dfn style ="color:gold"> hotelSearch</dfn>(self, hotel_name):</cite>
+            <cite>&nbsp URL = <dfn style = "color:green">"https://www.google.com/search?q="</dfn>+hotel_name</cite>
+            <cite>&nbsp headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0'}</cite>
+            <cite>&nbsp page = requests.get(URL)</cite>
+            <cite>&nbsp soup = BeautifulSoup(page.content,<dfn style = "color:green">"html.parser"</dfn>)</cite>
+            <cite>&nbsp hotel_names = soup.find_all('div', class_ = 'BTPx6e bOYhNc')</cite>
+            <cite>&nbsp list_of_hotels = []</cite>
+            <cite>&nbsp for hotel in hotel_names:</cite>
+            <cite>&nbsp &nbsp print (self.hotelSearch(hotel.text))</cite>
+            <cite>&nbsp &nbsp list_of_hotels.append(self.hotelSearch(hotel.text))</cite>
+            <cite>&nbsp return (list_of_hotels)</cite>
+        </code>
+        <h3>Additional Information</h3>
+    <hr>
+    <p>Access to internet is needed to run this function when called.</p>
+    </pre>
+
+
+    
+</body>
+</html>
