@@ -18,3 +18,17 @@ a {
     cursor: pointer;
     text-decoration: none;
 }
+
+.Title{
+    text-align: center;
+}
+
+.pages{
+    flex-direction: column;
+    display: flex;
+    float:left;
+    max-width: 175px;
+}
+.intro{
+    margin-left:200px;
+}
